@@ -55,10 +55,11 @@ def generate_synthetic_data(num_records=5000):
         "Churn": churn
     })
     
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    data_dir = os.path.join(base_dir, "data")
-    os.makedirs(data_dir, exist_ok=True)
-    df.to_csv(os.path.join(data_dir, "synthetic_churn_data.csv"), index=False)
+    from pathlib import Path
+    base_dir = Path(__file__).resolve().parent.parent
+    data_dir = base_dir / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    df.to_csv(data_dir / "synthetic_churn_data.csv", index=False)
     print("Synthetic data generated successfully at 'data/synthetic_churn_data.csv'")
 
 if __name__ == "__main__":

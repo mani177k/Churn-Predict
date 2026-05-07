@@ -11,12 +11,17 @@ from xgboost import XGBClassifier
 from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score, f1_score
 from imblearn.over_sampling import SMOTE
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRIPTS_DIR = os.path.join(ROOT_DIR, "scripts")
-if SCRIPTS_DIR not in sys.path:
-    sys.path.append(SCRIPTS_DIR)
+from pathlib import Path
 
-from data_preprocessing import ChurnDataProcessor, load_data, get_models_dir
+ROOT_DIR = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = ROOT_DIR / "scripts"
+
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from scripts.data_preprocessing import ChurnDataProcessor, load_data, get_models_dir
 
 def evaluate_model(model, X_test, y_test, model_name):
     y_pred = model.predict(X_test)
