@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Environment variables
+.env
+.venv
+venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+database/
+
+# Exclude old/duplicate model versions (keep only the latest active ones)
+models/model_v_20260430_*.pkl
+models/model_v_20260503_191854.pkl
+models/random_forest.pkl
+models/logistic_regression.pkl
+models/best_model.pkl
+
+# Exclude temporary retrain data
+data/retrain_temp.csv
+
+# DO NOT IGNORE core model artifacts
+!models/model_v_20260503_220922.pkl
+!models/processor_v_20260503_220922.pkl
+!models/metadata.json
+!models/metrics.json
+!models/feature_importance.json
+!data/synthetic_churn_data.csv

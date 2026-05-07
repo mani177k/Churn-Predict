@@ -3,7 +3,6 @@ import pandas as pd
 import os
 import sys
 import json
-import shap
 
 from pathlib import Path
 
@@ -66,33 +65,17 @@ def predict_churn(customer_data: dict):
         risk_level = "High"
     elif prob_churn > 0.4:
         risk_level = "Medium"
-        
-    reasons = []
-    try:
-        if "XGB" in str(type(model)) or "Forest" in str(type(model)):
-            explainer = shap.TreeExplainer(model)
-            shap_values = explainer.shap_values(X_processed)
-            if isinstance(shap_values, list):
-                shap_values = shap_values[1]
-        else:
-            explainer = shap.LinearExplainer(model, X_processed)
-            shap_values = explainer.shap_values(X_processed)
 
-        feature_names = X_processed.columns
-        vals = shap_values[0] if len(shap_values.shape) > 1 else shap_values
-        
-        feature_contributions = sorted(zip(feature_names, vals), key=lambda x: x[1], reverse=True)
-        
-        for feature, contribution in feature_contributions[:3]:
-            if contribution > 0.01:
-                orig_feature = feature.split('_')[0]
-                reasons.append(f"High impact from '{orig_feature}' contributes to churn risk.")
-    except Exception as e:
-        print(f"SHAP Error: {e}")
-        if customer_data.get("ContractType") == "Month-to-month":
-            reasons.append("Month-to-month contract is a strong churn indicator.")
-        if float(customer_data.get("MonthlyCharges", 0)) > 80:
-            reasons.append("High monthly charges increase financial pressure.")
+    # Rule-based risk factor explanations (no SHAP dependency)
+    reasons = []
+    if customer_data.get("ContractType") == "Month-to-month":
+        reasons.append("Month-to-month contract is a strong churn indicator.")
+    if float(customer_data.get("MonthlyCharges", 0)) > 80:
+        reasons.append("High monthly charges increase financial pressure.")
+    if int(customer_data.get("Tenure", 999)) < 12:
+        reasons.append("Short tenure customers are at higher churn risk.")
+    if customer_data.get("PaymentMethod") == "Electronic check":
+        reasons.append("Electronic check payment is correlated with higher churn.")
 
     if not reasons:
         reasons.append("Customer shows stable account patterns.")
