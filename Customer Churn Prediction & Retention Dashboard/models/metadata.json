@@ -1,0 +1,32 @@
+{
+    "version": "model_v_20260503_220922.pkl",
+    "processor": "processor_v_20260503_220922.pkl",
+    "best_model_type": "XGBoost",
+    "trained_at": "2026-05-03 22:09",
+    "metrics": {
+        "Logistic Regression": {
+            "Accuracy": 0.758,
+            "Precision": 0.6978021978021978,
+            "Recall": 0.8318777292576419,
+            "F1_Score": 0.7589641434262948
+        },
+        "Random Forest": {
+            "Accuracy": 0.759,
+            "Precision": 0.6998158379373849,
+            "Recall": 0.8296943231441049,
+            "F1_Score": 0.7592407592407593
+        },
+        "XGBoost": {
+            "Accuracy": 0.768,
+            "Precision": 0.7077205882352942,
+            "Recall": 0.8406113537117904,
+            "F1_Score": 0.7684630738522954
+        }
+    },
+    "best_metrics": {
+        "Accuracy": 0.768,
+        "Precision": 0.7077205882352942,
+        "Recall": 0.8406113537117904,
+        "F1_Score": 0.7684630738522954
+    }
+}

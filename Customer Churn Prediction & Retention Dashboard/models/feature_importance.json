@@ -1,0 +1,46 @@
+[
+    {
+        "feature": "ContractType_Month-to-month",
+        "importance": 0.48745623230934143
+    },
+    {
+        "feature": "ContractType_Two year",
+        "importance": 0.24947689473628998
+    },
+    {
+        "feature": "ContractType_One year",
+        "importance": 0.11263406276702881
+    },
+    {
+        "feature": "Tenure",
+        "importance": 0.051812320947647095
+    },
+    {
+        "feature": "MonthlyCharges",
+        "importance": 0.031428080052137375
+    },
+    {
+        "feature": "PaymentMethod_Electronic check",
+        "importance": 0.021169248968362808
+    },
+    {
+        "feature": "PaymentMethod_Credit card",
+        "importance": 0.01637132093310356
+    },
+    {
+        "feature": "PaymentMethod_Mailed check",
+        "importance": 0.012396736070513725
+    },
+    {
+        "feature": "PaymentMethod_Bank transfer",
+        "importance": 0.012001711875200272
+    },
+    {
+        "feature": "Gender_Female",
+        "importance": 0.0029267845675349236
+    },
+    {
+        "feature": "Gender_Male",
+        "importance": 0.00232655368745327
+    }
+]

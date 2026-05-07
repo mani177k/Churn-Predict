@@ -1,0 +1,301 @@
+Gender,Tenure,MonthlyCharges,ContractType,PaymentMethod,Churn
+Female,54,350,Two year,Credit card,No
+Female,63,628,Two year,Net banking,No
+Male,23,347,Two year,Net banking,No
+Male,42,1015,One year,UPI,No
+Male,47,931,Month-to-month,UPI,No
+Male,12,423,One year,UPI,No
+Female,7,726,Two year,UPI,No
+Female,24,1478,Month-to-month,Debit card,Yes
+Female,34,1598,Month-to-month,UPI,Yes
+Male,10,649,Month-to-month,Debit card,Yes
+Male,48,1568,One year,Debit card,Yes
+Female,51,1395,Month-to-month,Credit card,Yes
+Male,38,1312,One year,Credit card,Yes
+Female,40,1264,Two year,Net banking,Yes
+Male,7,1463,Two year,Debit card,Yes
+Male,12,1314,Month-to-month,Credit card,Yes
+Male,51,530,Two year,UPI,No
+Female,14,697,Month-to-month,Debit card,No
+Male,40,863,Month-to-month,Credit card,No
+Male,71,757,Month-to-month,UPI,No
+Female,36,648,One year,Net banking,No
+Male,51,690,Month-to-month,Net banking,No
+Male,36,1431,Month-to-month,Debit card,Yes
+Male,49,1448,Month-to-month,UPI,Yes
+Male,3,1386,One year,Credit card,Yes
+Female,64,1592,One year,Net banking,Yes
+Male,28,322,Month-to-month,Debit card,No
+Male,58,1174,One year,Debit card,No
+Female,25,753,Two year,UPI,No
+Male,72,1517,One year,Debit card,Yes
+Female,61,534,Two year,Net banking,No
+Female,28,365,One year,UPI,No
+Male,27,361,Two year,Debit card,No
+Female,30,788,One year,Credit card,No
+Male,66,1268,One year,Net banking,Yes
+Male,60,629,Month-to-month,Credit card,No
+Female,11,927,Month-to-month,UPI,Yes
+Male,66,1189,Two year,Net banking,No
+Male,18,654,Month-to-month,Credit card,No
+Female,21,1424,Two year,Credit card,Yes
+Female,53,1254,Two year,Debit card,Yes
+Male,12,705,Month-to-month,Net banking,No
+Female,13,900,One year,Credit card,No
+Female,41,1424,One year,UPI,Yes
+Female,9,861,Month-to-month,Credit card,Yes
+Female,70,825,Month-to-month,UPI,No
+Male,69,706,Month-to-month,Net banking,No
+Female,39,1576,Month-to-month,Debit card,Yes
+Female,32,1561,Two year,Debit card,Yes
+Female,32,476,Month-to-month,UPI,No
+Female,22,957,Month-to-month,Credit card,No
+Female,20,630,Two year,Net banking,No
+Male,60,826,Month-to-month,Debit card,No
+Female,35,861,One year,Credit card,No
+Female,49,843,Month-to-month,Credit card,No
+Male,46,1102,Two year,Net banking,No
+Male,51,1587,Two year,Credit card,Yes
+Male,37,794,One year,Credit card,No
+Female,49,684,One year,Debit card,No
+Male,39,645,Two year,Net banking,No
+Female,16,369,Month-to-month,Debit card,No
+Male,3,991,One year,UPI,No
+Female,7,627,Two year,UPI,No
+Male,19,412,One year,Net banking,No
+Male,39,1400,One year,UPI,Yes
+Male,22,851,Month-to-month,Net banking,No
+Female,63,784,Month-to-month,Debit card,No
+Female,4,1136,Two year,UPI,No
+Female,21,1523,Month-to-month,Credit card,Yes
+Female,18,1274,One year,Credit card,Yes
+Male,14,1063,One year,Net banking,No
+Female,48,1531,One year,Net banking,Yes
+Female,61,452,Month-to-month,UPI,No
+Female,67,1439,Month-to-month,Credit card,Yes
+Female,67,835,Month-to-month,Debit card,No
+Male,51,1522,One year,Credit card,Yes
+Female,14,351,Month-to-month,Debit card,No
+Female,21,677,Two year,Net banking,No
+Female,13,971,Month-to-month,Net banking,No
+Female,26,364,Month-to-month,Debit card,No
+Female,23,411,Month-to-month,Net banking,No
+Male,23,1591,Month-to-month,UPI,Yes
+Female,29,1059,Two year,Credit card,No
+Male,42,681,One year,Debit card,No
+Female,15,834,Two year,Net banking,No
+Male,54,609,One year,Credit card,No
+Male,6,681,Month-to-month,Net banking,Yes
+Female,6,643,Two year,Debit card,No
+Male,32,924,Month-to-month,Credit card,No
+Female,36,977,Month-to-month,UPI,No
+Male,14,1146,Month-to-month,Credit card,No
+Male,3,1027,Month-to-month,UPI,Yes
+Female,18,1137,Month-to-month,Credit card,No
+Male,43,826,Month-to-month,Debit card,No
+Female,52,1396,One year,Net banking,Yes
+Male,67,399,Month-to-month,UPI,No
+Male,7,1205,Month-to-month,Credit card,Yes
+Female,16,569,One year,Credit card,No
+Male,45,763,Month-to-month,Net banking,No
+Male,24,1012,Two year,Credit card,No
+Male,36,429,Month-to-month,Debit card,No
+Male,52,578,Month-to-month,Net banking,No
+Male,65,1317,Month-to-month,Debit card,Yes
+Male,56,1246,Month-to-month,Credit card,Yes
+Female,30,547,Month-to-month,Credit card,No
+Male,59,913,Two year,Net banking,No
+Female,14,742,One year,Debit card,No
+Male,46,1421,One year,Net banking,Yes
+Male,48,1035,One year,UPI,No
+Male,64,826,One year,UPI,No
+Male,4,640,Two year,Debit card,No
+Female,35,1016,One year,Net banking,No
+Male,40,378,One year,Net banking,No
+Female,35,1202,One year,Debit card,Yes
+Male,31,878,Month-to-month,Credit card,No
+Female,8,978,One year,Net banking,No
+Female,39,951,Two year,Credit card,No
+Male,15,797,Month-to-month,Credit card,No
+Female,26,1253,One year,Net banking,Yes
+Male,53,1517,Month-to-month,Credit card,Yes
+Male,18,1021,Month-to-month,Debit card,No
+Female,62,1294,Month-to-month,Credit card,Yes
+Male,64,1213,Two year,Debit card,Yes
+Male,59,505,Month-to-month,UPI,No
+Female,11,854,Month-to-month,Net banking,Yes
+Female,46,1324,Month-to-month,Net banking,Yes
+Female,39,1225,Month-to-month,UPI,Yes
+Female,71,1227,One year,Credit card,Yes
+Female,69,383,Month-to-month,Debit card,No
+Female,23,481,Month-to-month,UPI,No
+Male,21,1419,Month-to-month,Credit card,Yes
+Female,33,741,One year,Debit card,No
+Female,31,1049,One year,UPI,No
+Female,37,318,Two year,Debit card,No
+Male,15,1076,One year,Debit card,No
+Female,30,657,One year,Credit card,No
+Female,54,619,Month-to-month,Debit card,No
+Female,11,848,One year,UPI,No
+Male,3,604,One year,Credit card,No
+Male,45,608,One year,UPI,No
+Female,32,529,Month-to-month,Credit card,No
+Male,8,569,Month-to-month,Net banking,Yes
+Male,29,530,Two year,Credit card,No
+Female,51,1042,Month-to-month,Debit card,No
+Male,56,953,Two year,Debit card,No
+Male,40,921,Two year,Credit card,No
+Female,12,820,Month-to-month,Debit card,No
+Female,1,1499,Two year,Credit card,Yes
+Female,43,1262,One year,Debit card,Yes
+Female,1,832,One year,Credit card,No
+Male,8,405,Two year,Debit card,No
+Female,29,1445,One year,Credit card,Yes
+Male,53,1174,Month-to-month,Net banking,No
+Female,69,504,Month-to-month,Credit card,No
+Female,50,432,Month-to-month,UPI,No
+Female,71,597,Month-to-month,Net banking,No
+Male,33,1194,One year,UPI,No
+Male,46,1578,Month-to-month,Net banking,Yes
+Female,33,1231,Month-to-month,Debit card,Yes
+Female,68,845,One year,Debit card,No
+Male,18,1475,One year,Net banking,Yes
+Male,11,310,Month-to-month,UPI,Yes
+Male,69,1207,Month-to-month,Debit card,Yes
+Female,1,1324,Month-to-month,Debit card,Yes
+Female,8,392,Month-to-month,UPI,Yes
+Male,46,1269,Month-to-month,Net banking,Yes
+Female,47,864,Month-to-month,Net banking,No
+Female,35,356,One year,UPI,No
+Male,3,1308,Two year,Net banking,Yes
+Female,37,1242,One year,Net banking,Yes
+Male,55,1292,One year,Net banking,Yes
+Female,45,539,One year,Debit card,No
+Male,20,343,One year,Debit card,No
+Female,56,498,Month-to-month,Net banking,No
+Male,1,1485,Two year,UPI,Yes
+Female,63,1321,One year,Net banking,Yes
+Male,58,301,Month-to-month,Credit card,No
+Female,69,939,Month-to-month,Net banking,No
+Male,66,1092,Month-to-month,Credit card,No
+Female,38,1457,Two year,Net banking,Yes
+Male,40,1064,Month-to-month,Net banking,No
+Male,14,1062,Month-to-month,Net banking,No
+Female,49,479,Month-to-month,UPI,No
+Male,16,1132,Month-to-month,UPI,No
+Female,34,875,Month-to-month,Net banking,No
+Female,47,687,Month-to-month,UPI,No
+Male,52,424,Month-to-month,Net banking,No
+Female,72,1193,One year,UPI,No
+Female,20,1069,Month-to-month,Net banking,No
+Female,35,335,One year,Net banking,No
+Female,68,1102,One year,Debit card,No
+Female,6,532,Month-to-month,Net banking,Yes
+Female,52,546,Month-to-month,UPI,No
+Female,11,723,Two year,Net banking,No
+Female,72,514,One year,Net banking,No
+Female,3,329,Two year,Debit card,No
+Female,19,456,Month-to-month,Credit card,No
+Female,1,649,Month-to-month,Debit card,Yes
+Female,24,531,Month-to-month,UPI,No
+Female,66,1412,Month-to-month,UPI,Yes
+Female,25,491,Month-to-month,Credit card,No
+Female,24,646,Two year,Net banking,No
+Male,5,652,One year,Debit card,No
+Female,20,829,Month-to-month,Net banking,No
+Female,52,999,Two year,Credit card,No
+Male,45,570,Month-to-month,Net banking,No
+Male,36,1545,Month-to-month,Net banking,Yes
+Male,42,1234,One year,UPI,Yes
+Male,28,825,Month-to-month,Debit card,No
+Female,32,1502,Month-to-month,UPI,Yes
+Male,41,658,Month-to-month,Debit card,No
+Male,10,648,One year,Debit card,No
+Male,20,650,One year,Debit card,No
+Female,68,1038,Month-to-month,Net banking,No
+Male,9,947,Month-to-month,Net banking,Yes
+Female,55,1133,Month-to-month,Credit card,No
+Male,12,915,Month-to-month,UPI,No
+Male,10,556,Month-to-month,Credit card,Yes
+Male,26,1195,Two year,UPI,No
+Female,60,1080,Month-to-month,Credit card,No
+Female,60,1105,Two year,Debit card,No
+Female,43,1047,Month-to-month,Net banking,No
+Female,17,495,Month-to-month,Credit card,No
+Female,4,1001,Month-to-month,Debit card,Yes
+Male,50,1475,Two year,Credit card,Yes
+Female,44,1469,One year,UPI,Yes
+Female,54,765,Month-to-month,Credit card,No
+Female,37,1115,Month-to-month,Debit card,No
+Male,29,455,Month-to-month,Debit card,No
+Female,49,1131,Month-to-month,Credit card,No
+Male,59,1278,Month-to-month,Credit card,Yes
+Male,45,1417,One year,Net banking,Yes
+Male,49,1390,Month-to-month,Credit card,Yes
+Female,17,328,Month-to-month,Debit card,No
+Female,71,978,Two year,UPI,No
+Male,2,1056,Month-to-month,Credit card,Yes
+Male,31,366,Month-to-month,Credit card,No
+Female,48,980,One year,Debit card,No
+Female,55,604,Month-to-month,Credit card,No
+Male,43,1552,Month-to-month,Debit card,Yes
+Female,55,841,Month-to-month,Net banking,No
+Male,23,1063,Month-to-month,Credit card,No
+Female,71,1432,Month-to-month,Credit card,Yes
+Female,8,503,Two year,Debit card,No
+Female,50,1156,Month-to-month,Credit card,No
+Male,47,635,One year,Debit card,No
+Female,15,714,Month-to-month,Credit card,No
+Female,48,1132,Month-to-month,Debit card,No
+Female,68,1562,Month-to-month,UPI,Yes
+Male,45,839,Month-to-month,Credit card,No
+Male,38,627,One year,Credit card,No
+Male,49,1059,One year,Net banking,No
+Male,14,1096,Month-to-month,UPI,No
+Male,18,943,Month-to-month,Debit card,No
+Female,62,952,Month-to-month,UPI,No
+Male,66,1341,Month-to-month,Net banking,Yes
+Female,22,1327,Month-to-month,Debit card,Yes
+Female,21,574,Month-to-month,Credit card,No
+Female,64,1181,Month-to-month,Credit card,No
+Male,62,1433,Month-to-month,Credit card,Yes
+Male,8,399,Two year,UPI,No
+Male,2,1092,Month-to-month,Debit card,Yes
+Male,6,1586,Month-to-month,Net banking,Yes
+Male,17,1554,Month-to-month,Net banking,Yes
+Male,32,1410,Month-to-month,Debit card,Yes
+Male,48,961,Month-to-month,Net banking,No
+Male,51,913,One year,Credit card,No
+Female,16,750,Month-to-month,Debit card,No
+Male,9,377,Two year,Credit card,No
+Male,33,396,One year,Net banking,No
+Male,3,1096,Month-to-month,Debit card,Yes
+Male,56,585,Month-to-month,Net banking,No
+Female,72,1179,Month-to-month,Net banking,No
+Male,17,720,Two year,Credit card,No
+Male,57,571,Month-to-month,Net banking,No
+Female,43,1129,Month-to-month,UPI,No
+Female,58,1589,Month-to-month,Credit card,Yes
+Female,50,822,Month-to-month,Net banking,No
+Female,62,1228,Month-to-month,Debit card,Yes
+Female,35,1226,Month-to-month,Debit card,Yes
+Male,21,1207,Month-to-month,Net banking,Yes
+Female,21,543,Two year,UPI,No
+Male,47,518,Month-to-month,Debit card,No
+Male,59,716,Two year,Credit card,No
+Male,14,377,Month-to-month,Credit card,No
+Male,23,335,Month-to-month,Net banking,No
+Male,19,361,Two year,Net banking,No
+Male,8,1292,Month-to-month,UPI,Yes
+Female,7,691,Month-to-month,Credit card,Yes
+Female,51,1420,Month-to-month,Credit card,Yes
+Male,22,1423,Two year,Net banking,Yes
+Female,34,549,Month-to-month,Net banking,No
+Male,60,516,Month-to-month,Net banking,No
+Female,68,376,Two year,Debit card,No
+Male,40,1144,One year,Net banking,No
+Female,27,537,Month-to-month,Net banking,No
+Male,29,1184,Month-to-month,Credit card,No
+Female,51,809,Month-to-month,UPI,No
+Female,65,636,One year,Credit card,No
+Male,36,1508,One year,Credit card,Yes

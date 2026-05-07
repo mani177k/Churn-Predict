@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+streamlit
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+matplotlib
+seaborn
+pydantic
+python-multipart
+joblib
+plotly
+shap
