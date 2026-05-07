@@ -1,16 +1,19 @@
+import os
+import sys
+from pathlib import Path
+
+# Robust path handling for local and cloud deployment
+BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import os
-import sys
 import json
 from scripts.predict import predict_churn
-
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if base_dir not in sys.path:
-    sys.path.append(base_dir)
 
 st.set_page_config(
     page_title="ChurnPredict | Intelligence Dashboard",

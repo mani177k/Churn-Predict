@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Streamlit
+.streamlit/config.toml
+.streamlit/secrets.toml
+
+# Environment variables
+.env
+.venv
+venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+# Keep schema but ignore the actual db if it's large or local-only
+# However, for this project, the db is small and useful for initial run
+# so we'll let it be unless the user asks to ignore it.
+# database/churn_app.db
+
+# DO NOT IGNORE
+!models/
+!data/
