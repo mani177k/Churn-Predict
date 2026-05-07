@@ -5,12 +5,17 @@ import sys
 import json
 import shap
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRIPTS_DIR = os.path.join(ROOT_DIR, "scripts")
-if SCRIPTS_DIR not in sys.path:
-    sys.path.append(SCRIPTS_DIR)
+from pathlib import Path
 
-from data_preprocessing import ChurnDataProcessor
+ROOT_DIR = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = ROOT_DIR / "scripts"
+
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from scripts.data_preprocessing import ChurnDataProcessor
 
 def get_metadata():
     metadata_path = os.path.join(ROOT_DIR, "models", "metadata.json")

@@ -1,77 +1,65 @@
-# Customer Churn Prediction & Retention Dashboard
+# 🔄 ChurnPredict: Customer Retention Intelligence Dashboard
 
-## Project Overview
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://churn-predict.streamlit.app/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0055ff?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-This project is a complete, production-ready full-stack application that simulates a real-world SaaS analytics product used by telecom or subscription-based businesses. 
+A production-ready full-stack SaaS analytics platform that predicts customer churn using Machine Learning, identifies key churn drivers, and provides actionable business recommendations.
 
-It predicts customer churn using Machine Learning, identifies key drivers, provides actionable business insights, and displays the results in an interactive Streamlit dashboard. A FastAPI backend serves predictions and logs them to a SQLite database.
+## 🚀 Key Features
 
-## Architecture
+- **AI-Powered Predictions**: Real-time churn risk analysis using Random Forest and XGBoost models.
+- **Explainable AI (XAI)**: Integrated SHAP values to explain *why* a customer is at risk.
+- **Interactive Analytics**: Deep-dive dashboard for segmenting customers by tenure, charges, and contract type.
+- **Automated Retention Plans**: AI-generated suggestions for targeted customer outreach and discounts.
+- **FastAPI Backend**: High-performance API for serving predictions and logging data to a persistent database.
+
+## 🏗️ Architecture
 
 ```text
 User 
-  --> [Streamlit Dashboard]
-        --> /predict API Endpoint 
-              --> [FastAPI Backend]
-                    --> [ML Models (Logistic Regression / Random Forest)]
-                    --> [SQLite Database (Logging)]
+  --> [Streamlit Frontend] (Port: 8501)
+        --> [FastAPI Backend] (Port: 8000)
+              --> [ML Models (RF/XGBoost)]
+              --> [SQLite Database]
 ```
 
-## Setup Instructions
+## 🛠️ Local Setup
 
-### Prerequisites
-- Python 3.9+
-- Git
-
-### Installation
-
-1. **Clone the repository:**
+1. **Clone & Install:**
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
-
-2. **Install dependencies:**
-   ```bash
+   git clone <your-repo-url>
+   cd churn-predict
    pip install -r requirements.txt
    ```
 
-3. **Generate Synthetic Data:**
-   Generate the realistic telecom dataset used for training.
+2. **Initialize & Train:**
    ```bash
    python scripts/generate_data.py
-   ```
-
-4. **Train the ML Models:**
-   Train the Logistic Regression and Random Forest models, handle class imbalance, and save the artifacts.
-   ```bash
    python scripts/train_model.py
    ```
 
-5. **Initialize the Database (Optional, done automatically on API start):**
-   ```bash
-   python database/database.py
-   ```
+3. **Launch Application:**
+   - **Start Backend:** `uvicorn app.main:app --reload`
+   - **Start Dashboard:** `streamlit run dashboard/app.py`
 
-### Running the Application
+## ☁️ Deployment
 
-1. **Start the FastAPI Backend:**
-   In a terminal, run:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
-   The API will be available at `http://localhost:8000`.
+### Streamlit Community Cloud
+This project is optimized for one-click deployment on Streamlit Cloud:
+1. Push this repository to GitHub.
+2. Connect your GitHub account to [Streamlit Cloud](https://share.streamlit.io/).
+3. Select this repository and set the main file path to `dashboard/app.py`.
+4. The application will automatically install dependencies from `requirements.txt`.
 
-2. **Start the Streamlit Dashboard:**
-   In a separate terminal, run:
-   ```bash
-   streamlit run dashboard/app.py
-   ```
-   The interactive UI will open in your browser.
+### Environment Compatibility
+- **Python Version**: 3.11+
+- **Entry Point**: `dashboard/app.py`
+- **Data/Models**: All required artifacts are included in the `data/` and `models/` directories.
 
-## Screenshots
-*(Placeholders for screenshots)*
-- `[Screenshot: Prediction Panel]`
-- `[Screenshot: Analytics Dashboard]`
-- `[Screenshot: Power BI Dashboard]`
+## 📊 Sample Insights
+- **Intelligence Panel**: Input customer profiles to get instant risk scores and retention strategies.
+- **Analytics Dashboard**: Visualize high-level metrics like Churn Rate, Average Revenue, and Risk Segmentation.
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.

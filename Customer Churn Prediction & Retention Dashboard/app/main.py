@@ -1,15 +1,17 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
 import sys
 import os
+from pathlib import Path
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
 
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(os.path.join(base_dir, "scripts"))
-sys.path.append(os.path.join(base_dir, "database"))
+# Robust path handling for local and cloud deployment
+BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 try:
-    from predict import predict_churn
-    from database import init_db, log_prediction, get_recent_predictions
+    from scripts.predict import predict_churn
+    from database.database import init_db, log_prediction, get_recent_predictions
 except ImportError as e:
     print(f"Import Error: {e}")
 

@@ -457,7 +457,7 @@ def render_dashboard_panel():
     with c1:
         st.markdown("#### Feature Impact on Churn")
         try:
-            with open(os.path.join(base_dir, "models", "feature_importance.json"), "r") as f:
+            with open(os.path.join(BASE_DIR, "models", "feature_importance.json"), "r") as f:
                 feat_imp = json.load(f)
                 impact_data = pd.DataFrame(feat_imp).head(5)
                 impact_data.columns = ["Feature", "Impact"]
