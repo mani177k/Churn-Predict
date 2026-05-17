@@ -1,0 +1,51 @@
+campaign_id,customer_id,campaign_type,response,retained_after_30_days
+501,CUST_2117,Discount,Pending,Yes
+502,CUST_4107,Discount,Pending,Yes
+503,CUST_3326,Loyalty Points,Pending,Yes
+504,CUST_2920,Discount,Rejected,Yes
+505,CUST_2598,Free Upgrade,Rejected,Yes
+506,CUST_3206,Free Upgrade,Accepted,Yes
+507,CUST_4808,Discount,Accepted,No
+508,CUST_0815,Loyalty Points,Accepted,Yes
+509,CUST_0346,Free Upgrade,Accepted,No
+510,CUST_2350,Loyalty Points,Rejected,No
+511,CUST_0363,Loyalty Points,Pending,Yes
+512,CUST_2444,Free Upgrade,Rejected,No
+513,CUST_2266,Loyalty Points,Accepted,No
+514,CUST_2189,Free Upgrade,Rejected,No
+515,CUST_3006,Loyalty Points,Pending,No
+516,CUST_3282,Free Upgrade,Pending,No
+517,CUST_0985,Discount,Rejected,No
+518,CUST_1640,Free Upgrade,Rejected,Yes
+519,CUST_0828,Free Upgrade,Rejected,No
+520,CUST_2731,Free Upgrade,Accepted,No
+521,CUST_3532,Free Upgrade,Rejected,No
+522,CUST_4452,Loyalty Points,Rejected,Yes
+523,CUST_2936,Discount,Rejected,No
+524,CUST_3877,Free Upgrade,Pending,Yes
+525,CUST_0127,Loyalty Points,Pending,No
+526,CUST_3178,Discount,Accepted,Yes
+527,CUST_3057,Discount,Accepted,Yes
+528,CUST_0604,Discount,Pending,No
+529,CUST_3450,Discount,Pending,No
+530,CUST_4147,Free Upgrade,Pending,Yes
+531,CUST_3534,Free Upgrade,Rejected,No
+532,CUST_3368,Loyalty Points,Rejected,Yes
+533,CUST_3369,Loyalty Points,Pending,Yes
+534,CUST_3798,Loyalty Points,Rejected,Yes
+535,CUST_1793,Discount,Rejected,Yes
+536,CUST_2862,Discount,Accepted,Yes
+537,CUST_3477,Free Upgrade,Pending,No
+538,CUST_3418,Discount,Pending,Yes
+539,CUST_1646,Discount,Rejected,Yes
+540,CUST_1206,Discount,Pending,No
+541,CUST_3031,Loyalty Points,Accepted,Yes
+542,CUST_2873,Loyalty Points,Accepted,No
+543,CUST_3073,Free Upgrade,Accepted,No
+544,CUST_1855,Discount,Pending,No
+545,CUST_4022,Discount,Pending,Yes
+546,CUST_4663,Free Upgrade,Pending,Yes
+547,CUST_2709,Discount,Pending,Yes
+548,CUST_3503,Discount,Pending,No
+549,CUST_1333,Loyalty Points,Accepted,Yes
+550,CUST_0202,Free Upgrade,Rejected,No

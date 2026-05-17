@@ -13,6 +13,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+import io
+import random
 from scripts.predict import predict_churn
 
 st.set_page_config(
@@ -58,6 +60,55 @@ def apply_custom_css():
         
         .stApp { background-color: #f1f5f9 !important; color: #1a202c !important; }
         [data-testid="stSidebar"] { background-color: #ffffff !important; border-right: 1px solid #edf2f7 !important; }
+
+        /* ---- Selectbox labels: override Streamlit's default colour ---- */
+        .stSelectbox label,
+        .stSelectbox > label {
+            color: #4a5568 !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.04em !important;
+            margin-bottom: 4px !important;
+        }
+        .stSelectbox [data-baseweb="select"] > div {
+            border-radius: 8px !important;
+            border: 1.5px solid #e2e8f0 !important;
+            background-color: #ffffff !important;
+        }
+        .stSelectbox [data-baseweb="select"] > div:focus-within {
+            border-color: #FF4D4D !important;
+            box-shadow: 0 0 0 2px rgba(255,77,77,0.12) !important;
+        }
+
+        /* ---- Feature mapping card ---- */
+        .mapping-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2.25rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            margin-bottom: 2rem;
+        }
+        .mapping-card-header {
+            margin-bottom: 1.5rem;
+        }
+        .mapping-card-header h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin: 0 0 4px 0;
+        }
+        .mapping-card-header p {
+            font-size: 0.875rem;
+            color: #718096;
+            margin: 0;
+        }
+        .mapping-divider {
+            height: 1px;
+            background: #edf2f7;
+            margin: 1.25rem 0;
+        }
         
         .metric-card {
             background-color: #ffffff !important;
@@ -138,7 +189,8 @@ def apply_custom_css():
         .login-header h1 { font-size: 3rem !important; font-weight: 800 !important; color: #1a202c !important; margin-bottom: 0px !important; }
         .login-header p { color: #718096 !important; font-size: 1.1rem; margin-top: 0px !important; }
 
-        div[data-testid="stVerticalBlockBorderWrapper"] {
+        /* Scope heavy login-card border to the login page container only */
+        .login-page-wrapper div[data-testid="stVerticalBlockBorderWrapper"] {
             border: 5px solid #000000 !important;
             border-radius: 12px !important;
             box-shadow: 0 30px 70px rgba(0,0,0,0.25) !important;
@@ -218,26 +270,33 @@ def apply_custom_css():
         ============================================================ */
         @media (max-width: 768px) {
 
-            /* Global container */
+            /* Global container — top padding clears the fixed sidebar toggle (≈38px button + 10px top offset) */
             .block-container {
+                padding-top: 3.5rem !important;
                 padding-left: 0.75rem !important;
                 padding-right: 0.75rem !important;
                 padding-bottom: 2rem !important;
             }
 
-            /* Page titles */
-            h1 { font-size: 1.6rem !important; }
+            /* Page titles — indent slightly so text never sits under the toggle button */
+            h1 { font-size: 1.6rem !important; padding-left: 0.25rem !important; }
             h2 { font-size: 1.3rem !important; }
             h3 { font-size: 1.1rem !important; }
             h4 { font-size: 1rem !important; }
 
             /* ---- Login Card ---- */
-            div[data-testid="stVerticalBlockBorderWrapper"] {
+            .login-page-wrapper div[data-testid="stVerticalBlockBorderWrapper"] {
                 padding: 2rem 1.25rem !important;
                 max-width: 100% !important;
                 border-radius: 10px !important;
                 border-width: 3px !important;
                 box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+            }
+
+            /* ---- Mapping card: full-width on mobile ---- */
+            .mapping-card {
+                padding: 1.25rem 1rem !important;
+                border-radius: 12px !important;
             }
             .login-card-header h1 {
                 font-size: 2rem !important;
@@ -353,7 +412,7 @@ def apply_custom_css():
             .metric-value {
                 font-size: 18px !important;
             }
-            h1 { font-size: 1.4rem !important; }
+            h1 { font-size: 1.4rem !important; padding-left: 0.25rem !important; }
         }
         </style>
     """, unsafe_allow_html=True)
@@ -388,6 +447,7 @@ def handle_logout():
 
 def render_login_page():
     apply_custom_css()
+    st.markdown("<div class='login-page-wrapper'>", unsafe_allow_html=True)
     st.markdown("<div style='height: 10vh;'></div>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -403,6 +463,7 @@ def render_login_page():
             st.markdown("<div style='margin-top: 35px;'></div>", unsafe_allow_html=True)
             if st.button("Sign In", use_container_width=True, type="primary"):
                 handle_login(email, password)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 def kpi_card(label, value, color="#1a202c"):
     st.markdown(f"""
@@ -422,21 +483,31 @@ def render_dashboard_panel():
 
     df = st.session_state["data"]
     if st.session_state["mapping"] is None:
-        st.markdown("### Feature Mapping")
+        # ---- Feature Mapping Card ----
+        st.markdown("""
+            <div class='mapping-card'>
+                <div class='mapping-card-header'>
+                    <h3>🗂️ Map Your Dataset Columns</h3>
+                    <p>Match each required field to the correct column in your uploaded CSV so the dashboard renders accurately.</p>
+                </div>
+                <div class='mapping-divider'></div>
+            </div>
+        """, unsafe_allow_html=True)
+
         cols = df.columns.tolist()
         m = {}
         c1, c2 = st.columns(2, gap="large")
         with c1:
-            m["Churn"] = st.selectbox("Churn Column", cols, index=cols.index("Churn") if "Churn" in cols else 0)
-            m["Tenure"] = st.selectbox("Tenure Column", cols, index=cols.index("Tenure") if "Tenure" in cols else 0)
+            m["Churn"] = st.selectbox("Churn Column", cols, index=cols.index("Churn") if "Churn" in cols else 0, key="map_churn")
+            m["MonthlyCharges"] = st.selectbox("Monthly Charges Column", cols, index=cols.index("MonthlyCharges") if "MonthlyCharges" in cols else 0, key="map_mc")
         with c2:
-            m["MonthlyCharges"] = st.selectbox("Monthly Charges Column", cols, index=cols.index("MonthlyCharges") if "MonthlyCharges" in cols else 0)
-            m["ContractType"] = st.selectbox("Contract Type Column", cols, index=cols.index("ContractType") if "ContractType" in cols else 0)
-        
-        st.markdown("<br>", unsafe_allow_html=True)
+            m["Tenure"] = st.selectbox("Tenure Column", cols, index=cols.index("Tenure") if "Tenure" in cols else 0, key="map_tenure")
+            m["ContractType"] = st.selectbox("Contract Type Column", cols, index=cols.index("ContractType") if "ContractType" in cols else 0, key="map_ct")
+
+        st.markdown("<div style='margin-top: 1.75rem;'></div>", unsafe_allow_html=True)
         _, btn_col, _ = st.columns([1, 1.5, 1])
         with btn_col:
-            if st.button("Confirm & Generate Dashboard", key="confirm_map", type="secondary"):
+            if st.button("✅ Confirm & Generate Dashboard", key="confirm_map", type="primary", use_container_width=True):
                 st.session_state["mapping"] = m
                 st.rerun()
         return
@@ -568,7 +639,30 @@ def render_prediction_panel():
         else:
             st.info("Select customer profile and run analysis.")
 
+def get_sample_csv():
+    """Generate a realistic sample CSV in memory for users to download and upload."""
+    rng = random.Random(42)
+    contracts = ["Month-to-month", "One year", "Two year"]
+    payments = ["Electronic check", "Mailed check", "Bank transfer", "Credit card"]
+    genders = ["Male", "Female"]
+    rows = ["CustomerID,Gender,Tenure,MonthlyCharges,ContractType,PaymentMethod,Churn"]
+    for i in range(1, 201):
+        gender = rng.choice(genders)
+        contract = rng.choices(contracts, weights=[0.55, 0.25, 0.20])[0]
+        tenure = rng.randint(1, 24) if contract == "Month-to-month" else rng.randint(1, 72)
+        monthly = round(rng.uniform(20, 120), 2)
+        payment = rng.choices(payments, weights=[0.35, 0.20, 0.25, 0.20])[0]
+        churn_prob = 0.1
+        if contract == "Month-to-month": churn_prob += 0.35
+        if tenure < 12: churn_prob += 0.20
+        if monthly > 80: churn_prob += 0.15
+        if payment == "Electronic check": churn_prob += 0.10
+        churn = "Yes" if rng.random() < min(churn_prob, 0.95) else "No"
+        rows.append(f"CUST-{i:05d},{gender},{tenure},{monthly},{contract},{payment},{churn}")
+    return io.StringIO("\n".join(rows)).getvalue()
+
 def main():
+
     init_session_state()
     apply_custom_css()
     if not st.session_state["authenticated"]:
@@ -581,6 +675,17 @@ def main():
         
         st.sidebar.markdown("---")
         st.sidebar.markdown("### Data Management")
+
+        # Sample CSV download
+        st.sidebar.download_button(
+            label="📥 Download Sample CSV",
+            data=get_sample_csv(),
+            file_name="sample_customers.csv",
+            mime="text/csv",
+            use_container_width=True,
+            key="download_sample_csv"
+        )
+
         up = st.sidebar.file_uploader("Upload CSV", type=["csv"], label_visibility="collapsed")
         if up:
             st.session_state["data"] = pd.read_csv(up)
